@@ -4,7 +4,8 @@ data class Person(val name: String, val age: Int)
 
 val friends = arrayOf(
     Person("Raul", 29),
-    Person("Ramón", 31)
+    Person("Ramón", 31),
+    Person("Jose", 33)
 )
 
 fun Array<Person>.findOldest(): Person? {
@@ -28,12 +29,12 @@ fun Array<Person>.findOldest(): Person? {
     */
 }
 
-fun Array<Person>.findMax(comparator: Comparator<Person>): Person? {
+fun <T> Array<T>.findMax(comparator: Comparator<T>): T? {
     if (this.isEmpty()) return null
-    var max: Person = this[0]
-    for (person in slice(1 until size)) {
-        if (comparator.compare(max, person) > 0) {
-            max = person
+    var max: T = this[0]
+    for (elemenT in slice(1 until size)) {
+        if (comparator.compare(elemenT, max) > 0) {
+            max = elemenT
         }
     }
     return max
@@ -64,12 +65,9 @@ fun testComparisonByName() {
 }
 
 fun main() {
-    val person = Person("Alice", 29)
-    println(person.name)
-    println(person.age)
-    println(person)
 
     val oldest = friends.findOldest()
     println(friends.contentToString())
-    println(oldest)
+    println("El mas mayor es: $oldest")
+
 }
