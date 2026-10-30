@@ -73,9 +73,30 @@ fun ejercicios13y14y15y16() { // Calculadora
 
 // ------------ NIVEL 4 ------------
 
+fun ejercicio18y19() { // Edad
+    println("Dime tu edad: ")
+    var edad = readln().toInt()
+    edad++
+    println("El proximo año tendrás $edad años")
+}
 
+fun ejercicio20() {
+    println("Dime tu edad: ")
+    var edad = readln().toInt()
+    edad += 10
+    println("El proximo año tendrás $edad años")
+}
+
+fun ejercicio21() {
+    println("Dime un numero decimal: ")
+    var edad = readln().toDouble()
+    print("Tu numero es $edad")
+}
+
+
+// NO HE SEGUIDO PORQUE SON REPITITIVOS y FACILES
 
 fun main() {
 
-    ejercicios13y14y15y16()
+    ejercicio21()
 }
